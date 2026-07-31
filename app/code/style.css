@@ -1,0 +1,302 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --primary-color: #3b82f6;
+    --danger-color: #ef4444;
+    --success-color: #10b981;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding-bottom: 2rem;
+}
+
+header {
+    background-color: var(--card-bg);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+h1 span {
+    color: var(--primary-color);
+}
+
+.search-box input {
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    border: 2px solid #334155;
+    background-color: #0f172a;
+    color: #fff;
+    width: 260px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+    border-color: var(--primary-color);
+}
+
+.categories {
+    max-width: 1100px;
+    margin: 1rem auto 0;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+}
+
+.cat-btn {
+    background: #334155;
+    border: none;
+    color: #cbd5e1;
+    padding: 0.4rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.cat-btn.active, .cat-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.action-btn {
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.upload-toggle {
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 0 #1d4ed8;
+}
+
+.upload-toggle:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #1d4ed8;
+}
+
+.stop-btn {
+    background-color: var(--danger-color);
+    box-shadow: 0 4px 0 #b91c1c;
+}
+
+.stop-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #b91c1c;
+}
+
+/* Upload Panel Styles */
+.upload-panel {
+    background-color: var(--card-bg);
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.upload-panel.hidden {
+    display: none;
+}
+
+.upload-panel h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group.full-width {
+    flex: 100%;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select {
+    padding: 0.6rem;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    color: white;
+    outline: none;
+}
+
+.form-group input[type="file"] {
+    cursor: pointer;
+}
+
+.submit-btn {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Grid & Card Styles */
+.sound-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1.5rem;
+}
+
+.sound-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.2rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.sound-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Delete Button for Custom Cards */
+.delete-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* 3D Instant Button Effect */
+.instant-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 0.8rem;
+    outline: none;
+    transition: all 0.05s ease;
+}
+
+.instant-btn.red {
+    background: radial-gradient(circle, #ef4444 60%, #dc2626 100%);
+    box-shadow: 0 6px 0 #991b1b, 0 8px 10px rgba(0,0,0,0.4);
+}
+
+.instant-btn.blue {
+    background: radial-gradient(circle, #3b82f6 60%, #2563eb 100%);
+    box-shadow: 0 6px 0 #1e40af, 0 8px 10px rgba(0,0,0,0.4);
+}
+
+.instant-btn.green {
+    background: radial-gradient(circle, #22c55e 60%, #16a34a 100%);
+    box-shadow: 0 6px 0 #166534, 0 8px 10px rgba(0,0,0,0.4);
+}
+
+.instant-btn.yellow {
+    background: radial-gradient(circle, #eab308 60%, #ca8a04 100%);
+    box-shadow: 0 6px 0 #854d0e, 0 8px 10px rgba(0,0,0,0.4);
+}
+
+.instant-btn.purple {
+    background: radial-gradient(circle, #a855f7 60%, #9333ea 100%);
+    box-shadow: 0 6px 0 #6b21a8, 0 8px 10px rgba(0,0,0,0.4);
+}
+
+.instant-btn:active, .instant-btn.playing {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.6), 0 3px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+.sound-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    word-break: break-word;
+    line-height: 1.2;
+}
