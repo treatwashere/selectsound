@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelectSound - Instant Soundboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Select<span>Sound</span></h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search sounds...">
+            </div>
+        </div>
+        <nav class="categories">
+            <button class="cat-btn active" data-category="all">All</button>
+            <button class="cat-btn" data-category="memes">Memes</button>
+            <button class="cat-btn" data-category="games">Games</button>
+            <button class="cat-btn" data-category="effects">Effects</button>
+            <button class="cat-btn" data-category="custom">Custom</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button id="toggleUploadBtn" class="action-btn upload-toggle">+ Add Sound</button>
+            <button id="stopAllBtn" class="action-btn stop-btn">Stop All Sounds</button>
+        </div>
+
+        <!-- Custom Upload Form Panel -->
+        <div id="uploadPanel" class="upload-panel hidden">
+            <h3>Upload Custom Sound</h3>
+            <form id="uploadForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="soundName">Sound Name</label>
+                        <input type="text" id="soundName" placeholder="e.g., Victory Royale" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="soundCategory">Category</label>
+                        <select id="soundCategory">
+                            <option value="custom">Custom</option>
+                            <option value="memes">Memes</option>
+                            <option value="games">Games</option>
+                            <option value="effects">Effects</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="soundColor">Button Color</label>
+                        <select id="soundColor">
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="purple">Purple</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="audioFile">Audio File (MP3, WAV, OGG)</label>
+                        <input type="file" id="audioFile" accept="audio/*" required>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Save to Soundboard</button>
+            </form>
+        </div>
+
+        <div id="soundGrid" class="sound-grid">
+            <!-- Dynamic sound buttons render here -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
