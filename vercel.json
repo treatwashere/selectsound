@@ -1,3 +1,13 @@
 {
   "outputDirectory": "code"
 }
+
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://selectsound.vercel.app/app/code/app.html",
+      "permanent": true
+    }
+  ]
+}
