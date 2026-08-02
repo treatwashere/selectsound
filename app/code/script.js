@@ -1,7 +1,7 @@
 // Default sounds array
 const defaultSounds = [
     { id: "def-1", name: "Vine Boom", file: "sounds/vine-boom.mp3", category: "memes", color: "red" },
-    { id: "def-2", name: "Bruh", file: "sounds/bruh.mp3", category: "memes", color: "blue" },
+    { id: "def-2", name: "Bruh", file: "https://github.com/treatwashere/selectsound/raw/refs/heads/main/app/assets/sounds/bruh.mp3", category: "memes", color: "blue" },
     { id: "def-3", name: "Level Up", file: "sounds/level-up.mp3", category: "games", color: "green" },
     { id: "def-4", name: "Error Sound", file: "sounds/error.mp3", category: "effects", color: "yellow" },
     { id: "def-5", name: "Airhorn", file: "sounds/airhorn.mp3", category: "memes", color: "purple" }
